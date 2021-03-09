@@ -1,24 +1,47 @@
 package it.polito.tdp.parole.model;
 
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Parole {
+	
+	List<String> words;
 		
 	public Parole() {
-		//TODO
+		
+		this.words = new LinkedList<>();
 	}
 	
 	public void addParola(String p) {
-		//TODO
+		
+		if((p.matches(".*[a-zA-Z].*")) && (!p.matches(".*[0-9].*"))) {
+			words.add(p);
+		}
 	}
 	
 	public List<String> getElenco() {
-		//TODO
-		return null;
+		
+		List<String> el  = new LinkedList<>(words);
+		Collections.sort(el);
+		return el;
+		
 	}
 	
 	public void reset() {
-		// TODO
+		
+		words.clear();
 	}
+
+	@Override
+	public String toString() {
+		
+		String res = "";
+		for(String s : this.words) {
+			res += s + "\n";
+		}
+		return res;
+	}
+	
 
 }
