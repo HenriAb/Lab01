@@ -36,27 +36,37 @@ public class FXMLController {
     private Button btnCancella;
 
     @FXML
+    private TextField txtTempi;
+    
+    @FXML
     void doCancella(ActionEvent event) {
 
+    	
     	String daCancellare = this.txtResult.getSelectedText();
+    	double start = System.nanoTime();
     	this.elenco.cancella(daCancellare);
+    	double stop  = System.nanoTime();
     	this.txtResult.clear();
     	String res = "";
     	for(String s : elenco.getElenco()) {
     		res += s + "\n";
     	}
     	this.txtResult.setText(res);
+    	this.txtTempi.setText("Tempo impiegato per l'operazione di add: " + (stop-start) + "  ns");
     }
     
     @FXML
     void doInsert(ActionEvent event) {
+    	double start = System.nanoTime();
     	this.elenco.addParola(txtParola.getText());
+    	double stop  = System.nanoTime();
     	this.txtParola.setText("");
     	String res = "";
     	for(String s : this.elenco.getElenco()) {
     		res += s + "\n";
     	}
     	this.txtResult.setText(res);
+    	this.txtTempi.setText("Tempo impiegato per l'operazione di remove: " + (stop-start) + " ns");
     }
 
     @FXML

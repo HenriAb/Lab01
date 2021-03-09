@@ -35,15 +35,27 @@
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
    <bottom>
-      <HBox BorderPane.alignment="CENTER_RIGHT">
+      <VBox BorderPane.alignment="CENTER_RIGHT">
          <children>
-            <Button fx:id="btnReset" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#doReset" text="Reset" />
-            <Button fx:id="btnCancella" mnemonicParsing="false" onAction="#doCancella" text="Cancella">
-               <HBox.margin>
-                  <Insets left="150.0" />
-               </HBox.margin>
-            </Button>
+            <TextField fx:id="txtTempi" editable="false" promptText="Tempi">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox>
+               <children>
+                  <Button fx:id="btnReset" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#doReset" text="Reset" />
+                  <Button fx:id="btnCancella" mnemonicParsing="false" onAction="#doCancella" text="Cancella">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
          </children>
-      </HBox>
+      </VBox>
    </bottom>
 </BorderPane>
