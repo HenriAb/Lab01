@@ -43,5 +43,9 @@ public class Parole {
 		return res;
 	}
 	
-
+	public void cancella(String s) {
+		if(words.contains(s)) {
+			words.remove(s);
+		}
+	}
 }
