@@ -52,7 +52,7 @@ public class FXMLController {
     		res += s + "\n";
     	}
     	this.txtResult.setText(res);
-    	this.txtTempi.setText("Tempo impiegato per l'operazione di add: " + (stop-start) + "  ns");
+    	this.txtTempi.setText("Tempo impiegato per l'operazione di remove: " + (stop-start) + "  ns");
     }
     
     @FXML
@@ -66,7 +66,7 @@ public class FXMLController {
     		res += s + "\n";
     	}
     	this.txtResult.setText(res);
-    	this.txtTempi.setText("Tempo impiegato per l'operazione di remove: " + (stop-start) + " ns");
+    	this.txtTempi.setText("Tempo impiegato per l'operazione di add: " + (stop-start) + " ns");
     }
 
     @FXML
